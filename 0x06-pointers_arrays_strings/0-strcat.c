@@ -3,7 +3,7 @@
 /**
  * _strncat - a function that concortenate two strings
  * @dest: destination string
- * @src: source string 
+ * @src: source string
  * Return: destination string (char *optr)
  */
 
@@ -14,16 +14,16 @@ char *_strcat(char *dest, char *src);
 
 				for (len1 = 0; dest[len1] != '\0'; len1++)
 			{
-				
+
 			}
 				for (len2 = 0; src[len2] != '\0'; len2++)
 			{
-			
-				for (i =  0; i <= len2; i++)
+
+				for (i = 0; i <= len2; i++)
 			}
-			
-				{
+
+			{
 				dest[len1 + i] =  src[i];
-				}
+			}
 				return (dest);
 }
