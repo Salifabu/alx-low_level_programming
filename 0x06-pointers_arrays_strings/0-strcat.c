@@ -7,7 +7,7 @@
  * Return: destination string (char *optr)
  */
 
-char *_strcat(char *dest, char *src);
+char *_strcat(char *dest, char *src)
 
 {
 				int len1, len2, i;
@@ -23,7 +23,7 @@ char *_strcat(char *dest, char *src);
 			}
 
 			{
-				dest[len1 + i] =  src[i];
+				dest[len1 + i] = src[i];
 			}
 				return (dest);
 }
