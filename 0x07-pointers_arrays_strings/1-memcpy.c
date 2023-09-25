@@ -1,25 +1,25 @@
 #include "main.h"
 
 /**
-  * _strchr - main function
+  * _memcpy - main function prototype
   *
-  * @s: Function parameter
+  * @src: Source parameter
   *
-  * @c: Function parameter
+  * @dest: Destination parameter
   *
-  * Return: Always o.
+  * @n: Function parameter
+  *
+  * Return: Copied memory
   */
 
-char *_strchr(char *s, char c)
+char *_memcpy(char *dest, char *src, unsigned int n)
 
 {
+	unsigned int a;
 
-	int k;
-
-	for (k = 0; s[k] >= '\0'; k++)
+	for (a = 0; a < n; a++)
 {
-	if (s[k] == c)
-	eturn (s + k);
+	dest[a] = src[a];
 }
-	return (0);
+	return (dest);
 }
