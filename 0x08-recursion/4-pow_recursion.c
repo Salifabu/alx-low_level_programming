@@ -1,21 +1,27 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - print a string length
+ * _pow_recursion - the power of a number
  *
- * @s: the string
+ * @x: the number
  *
- * Return: length of a string in int
+ * @y: power
+ *
+ * Return: the result of power
  *
  */
 
-int _strlen_recursion(char *s)
+int _pow_recursion(int x, int y)
 {
 
-        if (*s != '\0')
+	if (y < 0)
 {
-        return (1 + _strlen_recursion(s + 1));
+	return (-1);
+}
+	else if (y == 0)
+{
+	return (1);
+}
+	return (x * _pow_recursion(x, y - 1));
+}
 
-}
-        return (0);
-}
