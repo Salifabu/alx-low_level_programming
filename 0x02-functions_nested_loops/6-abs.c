@@ -6,16 +6,14 @@
  * Return: the absolute value of int
  */
 int _abs(int n)
-	int n
-
-	n = _abs('-');
 {
-	if (n < 0)
-	{
-	int abs_val;
-
-	abs_val = n * -1;
-	return (abs_val);
-	}
+	if (n >= 0)
+{
 	return (n);
 }
+	else
+{
+	return (n * -1);
+}
+}
+
