@@ -2,9 +2,9 @@ global    main
 
 	extern    printf
 
-main:
+	main:
 
-	mov   edi, format
+	rov   edi, format
 
 	xor   eax, eax
 
