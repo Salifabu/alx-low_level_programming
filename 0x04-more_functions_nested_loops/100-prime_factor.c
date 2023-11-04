@@ -1,27 +1,36 @@
 #include "stdio.h"
+#include <math.h>
 
 /**
- * main - a function that print largset prime factor of the following numbers 61285275143
+ * main - a function that print largset prime factor of 61285275143
  *
  * Return: 0 all the time
  */
 
-int main(void)
+	int main(void)
 {
-	long prime = 61285275143, divisor;
-	while (divisor < (prime / 2))
+	long int n;
+	long int max;
+	long int i;
+
+	n = 612852475143;
+	max = -1;
+
+	while (n % 2 == 0)
 {
-		if ((prime % 2) == 0)
-		{
-			prime /= 2;
-			continue;
-		}
-		for (divisor = 3; divisor < (prime / 2); divisor += 2)
-		{
-			if ((prime % divisor) == 0)
-				prime /= divisor;
-		}
+	max = 2;
+	n /= 2;
 }
-	printf("\% 1d\n", prime);
+	for (i = 3; i <= sqrt(n); i = i + 2)
+{
+	while (n % i == 0)
+{
+	max = i;
+	n = n / i;
+}
+}
+	if (n > 2)
+	max = n;
+	printf("%ld\n", max);
 	return (0);
 }
