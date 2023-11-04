@@ -1,22 +1,35 @@
 #include "main.h"
 
 /**
- * reverse_array - a function that reverse an array
- * @a: pointer to an array
- * @n number of element in an array
- * Return: void
+ * cap_string - The main  function
+ * @str: Function parameter of the string
+ *
+ * Return: Void.
  */
-
-void reverse_array(int *a, int n)
+char *cap_string(char *str)
 {
-        int i = 0, temp;
+	int count = 0;
 
-        n = n - 1;
-
-        for (i = 0; i < n; i++)
+	while (str[count])
 {
-        temp = a[i];
-        a[i] = a[n];
-        a[n] = temp;
-        n--;
+	while (!(str[count] >= 'a' && str[count] <= 'z'))
+	count++;
+	if (str[count - 1] == ' ' ||
+	str[count - 1] == '\t' ||
+	str[count - 1] == '\n' ||
+	str[count - 1] == ',' ||
+	str[count - 1] == ';' ||
+	str[count - 1] == '.' ||
+	str[count - 1] == '!' ||
+	str[count - 1] == '?' ||
+	str[count - 1] == '"' ||
+	str[count - 1] == '(' ||
+	str[count - 1] == ')' ||
+	str[count - 1] == '{' ||
+	str[count - 1] == '}' ||
+	count == 0)
+	str[count] -= 32;
+	count++;
+}
+	return (str);
 }
