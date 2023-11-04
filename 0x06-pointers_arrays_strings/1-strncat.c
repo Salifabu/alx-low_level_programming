@@ -7,17 +7,23 @@
  * @n: no of element to be concertenate from src
  * Return: dest + number of src
  */
-
 char *_strncat(char *dest, char *src, int n)
-
 {
-	int len_dest, j;
+	int k, r;
 
-	for (len_dest = 0; dest[len_dest] != '\0'; len_dest++)
+	k = 0;
+	r = 0;
 
-	for (j = 0; src[j] != 0 && j < n; j++)
+	while (dest[k] != '\0')
 {
-	dest[len_dest + j] = src[j];
+	k++;
 }
+	while (r < n && src[r] != '\0')
+{
+	dest[k] = src[r];
+	k++;
+	r++;
+}
+	dest[k] = '\0';
 	return (dest);
 }
