@@ -9,20 +9,19 @@
 
 char *rot13(char *str)
 {
-	int i, j;
-	char c[] = "ABUCDEGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char d[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int k, r;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (k = 0; str[k] != '\0'; k++)
 {
-	for (j = 0; c[j] != '\0'; j++)
+	for (r = 0; r < 52; r++)
 {
-	if (str[i] == c[j])
+	if (str[k] == data1[r])
 {
-	str[i] = d[j];
+	str[k] = datarot[r];
 	break;
 }
-
 }
 }
 	return (str);
