@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *create_buffer(char *file);
+char *creates_buffer(char *file);
 void close_file(int fd);
 
 /**
@@ -16,7 +16,6 @@ char *creates_buffer(char *file)
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * 1024);
-
 	if (buffer == NULL)
 {
 	dprintf(STDERR_FILENO,
@@ -65,7 +64,7 @@ int main(int argc, char *argv[])
 	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 }
-	buffer = create_buffer(argv[2]);
+	buffer = creates_buffer(argv[2]);
 	from = open(argv[1], O_RDONLY);
 	r = read(from, buffer, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -87,8 +86,7 @@ int main(int argc, char *argv[])
 }
 	r = read(from, buffer, 1024);
 	to = open(argv[2], O_WRONLY | O_APPEND);
-}
-	while (r > 0);
+} while (r > 0);
 	free(buffer);
 	close_file(from);
 	close_file(to);
