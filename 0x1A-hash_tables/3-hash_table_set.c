@@ -26,21 +26,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	bucket = ht->array[index];
 
 	while (bucket)
-	{
+{
 		if (!strcmp(key, bucket->key))
-		{
+{
 			free(bucket->value);
 			bucket->value = valuecopy;
 			return (1);
-		}
+}
 		bucket = bucket->next;
-	}
+}
 	new_node = calloc(1, sizeof(hash_node_t));
 	if (new_node == NULL)
-	{
+{
 		free(valuecopy);
 		return (0);
-	}
+}
 	keycopy = strdup(key);
 	if (!keycopy)
 		return (0);
