@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# Run the whoami command as the specified user
-sudo -u $username whoami
+# Creates and runs whoami command as specified user
+sudo -u "$1" whoami
+
